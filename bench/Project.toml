@@ -1,0 +1,6 @@
+[deps]
+BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
+FastRunningMedian = "3a47ddbd-112b-4cc1-b00e-3746ec434ee5"
+RollingFunctions = "b0e4dd01-7b14-53d8-9b45-175a3e362653"
+RunningQuantiles = "80c66bcf-cf80-4640-8128-20a4ffc975e3"
+SortFilters = "d6dedbf8-78c7-4e81-bd5f-fe48695b798a"
