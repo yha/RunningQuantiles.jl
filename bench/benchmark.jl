@@ -12,10 +12,11 @@ function make_v(p_nan = 0.1, n=10_000)
     v
 end
 
-benches = Dict("FastRunningMedian" => (v,w) -> FastRunningMedian.running_median(v, w),
-               "RunningQuantiles"  => (v,w) -> running_median(v, w),
-               "SortFilters"       => (v,w) -> SortFilters.movsort(v, w, 0.5)
-                )
+benches = OrderedDict(
+    "FastRunningMedian" => (v,w) -> FastRunningMedian.running_median(v, w),
+    "SortFilters"       => (v,w) -> SortFilters.movsort(v, w, 0.5),
+    "RunningQuantiles"  => (v,w) -> running_median(v, w),
+)
 
 function bench(f,k,n,w)
     @info "Benchmarking $k, w=$w"

@@ -2,8 +2,7 @@ module RunningQuantiles
 
 export running_quantile, running_median, SkipNaNs, PropagateNaNs, ErrOnNaN
 
-# `SkipLists` will be used when a version including PR #21 is released
-# using SkipLists
+using SkipLists
 using OffsetArrays
 using Statistics
 
@@ -79,17 +78,15 @@ function _running_quantile(v, p, r::AbstractUnitRange, nan_mode; buffer)
     result
 end
 
-#### To use when `SkipLists` support indexing (SkipLists PR #21)
-# function default_buffer(v,p,w)
-#     # Heuristics derived from superficial benchmarking.
-#     # These can probably be improved.
-#     len = length(make_window(w))
-#     if len > 6000
-#         SkipList{eltype(v)}(; node_capacity = round(Int, len/10))
-#     else
-#         SortedVector{eltype(v)}()
-#     end
-# end
-default_buffer(v,p,w) = SortedVector{eltype(v)}()
+function default_buffer(v,p,w)
+    # Heuristics derived from superficial benchmarking.
+    # These can probably be improved.
+    len = length(make_window(w))
+    if len > 6000
+        SkipList{eltype(v)}(; node_capacity = round(Int, len/10))
+    else
+        SortedVector{eltype(v)}()
+    end
+end
 
 end # module

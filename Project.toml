@@ -1,12 +1,14 @@
 name = "RunningQuantiles"
 uuid = "80c66bcf-cf80-4640-8128-20a4ffc975e3"
 authors = ["yha <yharel@campus.technion.ac.il>"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 OffsetArrays = "6fe1bfb0-de20-5000-8ca7-80f57d26f881"
+SkipLists = "1bc1db3f-e088-4b4f-941a-131a3eb578db"
 Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
 
 [compat]
 OffsetArrays = "1.12"
+SkipLists = "1.1.1"
 julia = "1.7"
