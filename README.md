@@ -30,7 +30,8 @@ These package handle the edges and the correspondence of input to output indices
 The most versatile alternative, in terms of options for edge padding and handling of `NaN` values, is probably [ImageFiltering.mapwindow](https://github.com/JuliaImages/ImageFiltering.jl). But it is not specialized for quantiles, and is therefore a *much* slower option.
 
 Benchmarks for running median on a random vector of length `100_000`:
-![plot_63](https://user-images.githubusercontent.com/4170948/174908824-2ca2d20c-4eac-4a65-b552-3fd4d23b9ffd.png)
+![RunningQuantiles benchmarks](https://user-images.githubusercontent.com/4170948/176232529-91b9b282-27c1-43b8-930a-ab8b4d8b0a51.png)
+
 
 Shaded areas indicate standard deviation. The input vector has no `NaN`s. Performance of this package in the presence of `NaN`s is generally faster, roughly proportional to the number of non-`NaN`s (the other two packages do not handle `NaN` values correctly).
 
