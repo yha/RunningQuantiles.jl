@@ -21,8 +21,8 @@ computes the running median, i.e. 1/2-th quantile, as above.
 
 ## Alternatives and benchmakrs
 
-These two packages also implement running quantiles/medians, but do not handle `NaN`s (output is garbage when `NaN`s are present):
-- [SortFilters.jl](https://github.com/sairus7/SortFilters.jl) is faster for small window sizes.
+These two packages also implement running quantiles/medians:
+- [SortFilters.jl](https://github.com/sairus7/SortFilters.jl) is faster for small window sizes but the output is garbage when `NaN`s are present.
 - [FastRunningMedian.jl](https://github.com/Firionus/FastRunningMedian.jl) is faster for all window size, but only supports median, rather than arbitrary quantiles. It also offers more options for handling of edges.
 
 These package handle the edges and the correspondence of input to output indices differently; please refer to their respective documentation for details.
